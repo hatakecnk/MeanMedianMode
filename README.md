@@ -1,7 +1,7 @@
 # MeanMedianMode
 Cara mencari Mean Median dan Mode
 
-![alt text](https://img.shields.io/badge/Coded-Febry Afriansyah-blue.svg)
+![alt text](https://img.shields.io/badge/Coded-Febry%20Afriansyah-blue.svg)
 ![alt text](https://img.shields.io/badge/Size-7KB-yellow.svg)
 ![alt text](https://img.shields.io/badge/Java-green.svg)
 
