@@ -2,7 +2,7 @@
 // Github : https://github.com/hatakecnk //
 
 import java.util.*; // Import semua module yang ada di java.util //
-public class tes{
+public class fmean{
     public static void main(String[] args){
         int input, abc;
         Scanner febry = new Scanner(System.in);
