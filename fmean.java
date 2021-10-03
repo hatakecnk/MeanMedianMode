@@ -2,25 +2,38 @@
 // Github : https://github.com/hatakecnk //
 
 import java.util.*; // Import semua module yang ada di java.util //
+import java.text.*; // Import semua module yang ada di java.text //
 public class fmean{
+    private String getTanggal(){
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date();
+        return dateFormat.format(date);  
+    }  
+    private String getJam(){
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+        Date date = new Date();
+        return dateFormat.format(date);  
+    }
     public static void main(String[] args){
-        int input, abc;
-        Scanner febry = new Scanner(System.in);
-        for(String m = "Y"; m.equals("Y")||m.equals("y"); ){
+        for(String m = "Y"; m.equals("Y")||m.equals("y"); ){ // Looping menu //
             try{ // Menampilkan menu pilihan //
-                System.out.print("\nSimple Program Menghitung Mean, Median dan Modus\nAuthor\t: Febry Afriansyah\nGithub\t: https://github.com/hatakecnk\n\n1. Menghitung mean\n2. Menghitung median\n3. Menghitung modus\n0. Keluar\n");
-                System.out.print("Masukan Pilihan Anda (1/2/3/0): ");
-                abc = febry.nextInt();
+                Scanner febry = new Scanner(System.in);
+                System.out.print("\nSimple Program Menghitung Mean, Median dan Modus\nAuthor\t: Febry Afriansyah\nGithub\t: https://github.com/hatakecnk\n");
+                fmean tgl = new fmean();  
+                System.out.println("Tanggal\t: "+tgl.getTanggal()); 
+                System.out.println("Jam\t: "+tgl.getJam());
+                System.out.print("\n1. Menghitung mean\n2. Menghitung median\n3. Menghitung modus\n0. Keluar\nMasukan Pilihan Anda (1/2/3/0): ");
+                int abc = febry.nextInt();
                 if (abc==1){ // pilihan 1 menghitung mean //
                     System.out.print("\nMasukkan berapa banyak data: ");
                     Scanner feb = new Scanner(System.in);
-                    input = feb.nextInt();
+                    int input = feb.nextInt();
                     if (input > 0){
                         System.out.println("\nMasukkan isi data berupa angka:");
-                    int[] data =  new int[input];
-                    for (int i = 0; i < input; i++){
-                        System.out.print("- Isi Data ke-" +(i + 1)+ " = ");
-                        data[i] = feb.nextInt();
+                        int[] data =  new int[input];
+                        for (int i = 0; i < input; i++){
+                            System.out.print("- Isi Data ke-" +(i + 1)+ " = ");
+                            data[i] = feb.nextInt();
                     }
                     System.out.println("\nHasil :");
                     System.out.printf("Mean\t= %.1f%n", mean(data));
@@ -34,13 +47,13 @@ public class fmean{
                 else if (abc==2){ // Pilihan 2 menghitung median //
                     System.out.print("\nMasukkan berapa banyak data: ");
                     Scanner feb = new Scanner(System.in);
-                    input = feb.nextInt();
+                    int input = feb.nextInt();
                     if (input > 0){
                         System.out.println("\nMasukkan isi data berupa angka:");
-                    int[] data =  new int[input];
-                    for (int i = 0; i < input; i++){
-                        System.out.print("- Isi Data ke-" +(i + 1)+ " = ");
-                        data[i] = feb.nextInt();
+                        int[] data =  new int[input];
+                        for (int i = 0; i < input; i++){
+                            System.out.print("- Isi Data ke-" +(i + 1)+ " = ");
+                            data[i] = feb.nextInt();
                     }
                     System.out.println("\nHasil :");
                     System.out.printf("Median\t= %.1f%n", median(data));
@@ -54,13 +67,13 @@ public class fmean{
                 else if (abc==3){ // pilihan 3 menghitung modus //
                     System.out.print("\nMasukkan berapa banyak data: ");
                     Scanner feb = new Scanner(System.in);
-                    input = feb.nextInt();
+                    int input = feb.nextInt();
                     if (input > 0){
                         System.out.println("\nMasukkan isi data berupa angka:");
-                    int[] data =  new int[input];
-                    for (int i = 0; i < input; i++){
-                        System.out.print("- Isi Data ke-" +(i + 1)+ " = ");
-                        data[i] = feb.nextInt();
+                        int[] data =  new int[input];
+                        for (int i = 0; i < input; i++){
+                            System.out.print("- Isi Data ke-" +(i + 1)+ " = ");
+                            data[i] = feb.nextInt();
                     }
                     System.out.println("\nHasil :");
                     System.out.printf("Modus\t= %s%n", modus(data, input));
@@ -71,18 +84,23 @@ public class fmean{
                     else
                         System.err.println("Silahkan masukkan banyak data lebih dari 0");
                 }
+                else if (abc>3){
+                    System.out.println("Input Salah\nApakah anda ingin kembali ke menu utama? y/t: ");
+                    Scanner lagi = new Scanner(System.in);
+                    m = lagi.next();
+                }
                 else{ // Keluar //
                     System.out.println("Terima kasih telah menggunakan program kami");
                     System.exit(1);
                 }
             }
             catch (Exception e) {
-                System.out.print("Input Salah!");
-                System.out.print("\nCoba Lagi!");
-                System.exit(1);
+                System.out.print("Input Salah\nApakah anda ingin kembali ke menu utama? y/t: ");
+                Scanner lagi = new Scanner(System.in);
+                m = lagi.next();
             }
         }
-        for(String m = "T"; m.equals("T")||m.equals("t"); ){
+        for(String m = "Y"; m != ("Y")||m !=("y"); ){ // Keluar dari loopinng //
             System.out.println("Terima Kasih");
             System.exit(1);
         }
@@ -126,7 +144,6 @@ public class fmean{
             median = data[data.length / 2];
         else
             median = ((double) (data[data.length / 2] + data[(data.length / 2) - 1])) / 2;
-
         return median;
     }
 
