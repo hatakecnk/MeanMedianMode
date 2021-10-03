@@ -6,7 +6,7 @@ Cara mencari Mean Median dan Mode
 ![alt text](https://img.shields.io/badge/Java-green.svg)
 
 # Sample Image
-![alt text](https://raw.githubusercontent.com/hatakecnk/hatakecnk.github.io/master/2021-10-01%20(2).png)
+![alt text](https://raw.githubusercontent.com/hatakecnk/hatakecnk.github.io/master/Cuplikan%20layar%202021-10-03%20212041.png)
 
 # How To Install
 ```
