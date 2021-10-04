@@ -5,12 +5,12 @@ import java.util.*; // Import semua module yang ada di java.util //
 import java.text.*; // Import semua module yang ada di java.text //
 public class fmean{
     private String getTanggal(){
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        DateFormat dateFormat = new SimpleDateFormat("EEEE, dd MMM yyyy");
         Date date = new Date();
         return dateFormat.format(date);  
     }  
     private String getJam(){
-        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss a zz");
         Date date = new Date();
         return dateFormat.format(date);  
     }
@@ -22,7 +22,7 @@ public class fmean{
                 fmean tgl = new fmean();  
                 System.out.println("Tanggal\t: "+tgl.getTanggal()); 
                 System.out.println("Jam\t: "+tgl.getJam());
-                System.out.print("\n1. Menghitung mean\n2. Menghitung median\n3. Menghitung modus\n0. Keluar\nMasukan Pilihan Anda (1/2/3/0): ");
+                System.out.print("\nMenu:\n1. Menghitung mean\n2. Menghitung median\n3. Menghitung modus\n0. Keluar\nMasukan Pilihan Anda (1/2/3/0): ");
                 int abc = febry.nextInt();
                 if (abc==1){ // pilihan 1 menghitung mean //
                     System.out.print("\nMasukkan berapa banyak data: ");
@@ -85,13 +85,13 @@ public class fmean{
                         System.err.println("Silahkan masukkan banyak data lebih dari 0");
                 }
                 else if (abc>3){
-                    System.out.println("Input Salah\nApakah anda ingin kembali ke menu utama? y/t: ");
+                    System.out.print("Input Salah\nApakah anda ingin kembali ke menu utama? y/t: ");
                     Scanner lagi = new Scanner(System.in);
                     m = lagi.next();
                 }
                 else{ // Keluar //
                     System.out.println("Terima kasih telah menggunakan program kami");
-                    System.exit(1);
+                    System.exit(0);
                 }
             }
             catch (Exception e) {
@@ -101,8 +101,8 @@ public class fmean{
             }
         }
         for(String m = "Y"; m != ("Y")||m !=("y"); ){ // Keluar dari loopinng //
-            System.out.println("Terima Kasih");
-            System.exit(1);
+            System.out.println("Terima Kasih telah menggunakan program kami");
+            System.exit(0);
         }
     }
 
